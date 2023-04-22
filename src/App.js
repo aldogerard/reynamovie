@@ -21,6 +21,7 @@ const App = () => {
       search === ""
         ? getDataMovies()
             .then((result) => setDatas(result))
+            .catch((err) => alert(err))
             .finally(() => setLoading(false))
         : getSearchMovie(search)
             .then((result) => setDatas(result))
@@ -40,15 +41,17 @@ const App = () => {
       <div className="container max-w-5xl 2xl:max-w-7xl mx-auto ">
         <Header setSearch={setSearch} onSubmit={handlerSubmit} />
         <div className=" w-full  flex flex-wrap justify-start items-start pb-10">{getData()}</div>
-        <div className="flex justify-center py-6 mt-6 absolute w-full left-0 bg-[#191919]">
-          <h1 className="text-gray-400 font-semibold">
-            Copyright ©️ 2023 | build by
-            <a href="https://aldogerard.github.io/tailwind-portfolio-css/" target="_blank" className="text-amber-500">
-              {" "}
-              @aldogerard
-            </a>
-          </h1>
-        </div>
+        {datas && (
+          <div className="flex justify-center py-6 mt-6 absolute -z-10 w-full left-0 ">
+            <h1 className="text-gray-400 font-semibold">
+              Copyright ©️ 2023 | build by
+              <a href="https://aldogerard.github.io/tailwind-portfolio-css/" target="_blank" className="text-amber-500">
+                {" "}
+                @aldogerard
+              </a>
+            </h1>
+          </div>
+        )}
       </div>
     </div>
   );
