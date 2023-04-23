@@ -15,7 +15,8 @@ const App = () => {
     getDataMovies().then((result) => setDatas(result));
   }, []);
 
-  const handlerSubmit = () => {
+  const handlerSubmit = (e) => {
+    e.preventDefault();
     setLoading(true);
     setTimeout(() => {
       search === ""
@@ -27,7 +28,7 @@ const App = () => {
             .then((result) => setDatas(result))
             .catch((err) => alert(err))
             .finally(() => setLoading(false));
-    }, 1000);
+    }, 700);
   };
 
   const getData = () => {
