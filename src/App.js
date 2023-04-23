@@ -45,7 +45,7 @@ const App = () => {
           <div className="flex justify-center py-6 mt-6 absolute -z-10 w-full left-0 ">
             <h1 className="text-gray-400 font-semibold">
               Copyright ©️ 2023 | build by
-              <a href="https://aldogerard.github.io/tailwind-portfolio-css/" target="_blank" className="text-amber-500">
+              <a href="https://aldogerard.github.io/tailwind-portfolio-css/" target="_blank" rel="noreferrer" className="text-amber-500">
                 {" "}
                 @aldogerard
               </a>
